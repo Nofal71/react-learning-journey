@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body>
+    <button id='color'> Change Color </button>
+</body>
+<script>
+    // document.getElementById("color").onclick = () => document.body.style.backgroundColor = "red";                 //onclick needs function
+    // in case if we want to handle lot of colors :
+    
+    // function changeColor(color){
+    //     document.body.style.backgroundColor = `${color}`;
+    // }
+    // document.getElementById("color").onclick = changeColor("blue");                // its already executed and called , so its wrong we have ro return function 
+
+    function changeColor(color){
+        return function(){
+        document.body.style.backgroundColor = `${color}`; // it has access of parent function , that is closure (lexical scoping)
+        }
+    }
+    document.getElementById("color").onclick = changeColor("blue");                // Now it gets function that is not called , its closure , and concept of lexical scoping
+
+</script>
+
+</html>

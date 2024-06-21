@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+</body>
+<script>
+
+    const person1 = {
+        name: "nofal",
+        age: 19,
+        isEligible: true
+    }
+
+    const person = { ...person1, height: 6 };
+
+    const { height } = person;
+
+    const person2 = { ...person1, height: 5 }
+
+    console.log(person2.height);
+
+    const Person = ["Nofal", 17, true];
+
+    const demo = Person.map((isEligible , index) => {
+       return index == 1 ? isEligible > 18 ? isEligible : "not eligible" : isEligible ;
+    })
+
+    console.log(demo);
+
+</script>
+
+</html>
